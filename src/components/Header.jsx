@@ -2,7 +2,7 @@
 function Header() {
   return (
     <header>
-      <h1>Benvenuti nel mio Blog!</h1>
+      <h1>Blog di Linda! ♥ </h1>
     </header>
   );
 }
