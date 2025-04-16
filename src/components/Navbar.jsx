@@ -1,13 +1,21 @@
 //IMPORTAZIONI
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //CREO FUNZIONE NAVBAR
 function Navbar() {
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">Chi siamo</Link>
-      <Link to="/posts">I miei Post</Link>
+      <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">Chi siamo</NavLink>
+        </li>
+        <li>
+          <NavLink to="/posts">I miei Post</NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }
