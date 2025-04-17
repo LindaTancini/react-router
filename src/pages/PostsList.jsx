@@ -18,7 +18,7 @@ function PostList() {
   }, []);
 
   return (
-    <div>
+    <div className="post-list">
       <h3>Lista dei miei post:</h3>
       <ul>
         {posts.map((post) => (
