@@ -31,7 +31,7 @@ function PostsDetail() {
   //SE IL POST NON VIENE TROVATO, SCRIVIAMO UN MESSAGGIO DI POST NON TROVATO
   if (!posts) return <p>Ahia! Post non trovato, mi dispiace!</p>;
   return (
-    <div>
+    <div className="post-detail">
       <h3>{posts.title}</h3>
       <p>{posts.body}</p>
       <button onClick={() => navigate(`/posts/${posts.id - 1}`)}>
