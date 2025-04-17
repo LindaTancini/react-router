@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //CREO FUNZIONE POSTSDETAIL
 function PostsDetail() {
@@ -23,6 +24,7 @@ function PostsDetail() {
       //FINALLY E' UNA PROMISE CHE MI SERVE PER ESEGUIRE SEMPRE L'OPERAZIONE ANCHE IN CASO DI ERRORE
       .finally(() => SetLoading(false));
   }, [id]);
+  const navigate = useNavigate();
   //CREO CONDIZIONI PER IL LOADING
   //SE STIAMO CARICANDO, ALLORA SCRIVIAMO CARICAMENTO IN PAGINA
   if (loading) return <p>Loading...Sii paziente!</p>;
@@ -32,6 +34,12 @@ function PostsDetail() {
     <div>
       <h3>{posts.title}</h3>
       <p>{posts.body}</p>
+      <button onClick={() => navigate(`/posts/${posts.id - 1}`)}>
+        Torna al post precedente! ♥
+      </button>
+      <button onClick={() => navigate(`/posts/${posts.id + 1}`)}>
+        Vai al post sucessivo! ♥
+      </button>
     </div>
   );
 }
