@@ -34,6 +34,7 @@ function PostsDetail() {
     <div className="post-detail">
       <h3>{posts.title}</h3>
       <p>{posts.body}</p>
+      <button onClick={() => navigate("/")}>Torna alla HomePage! ♥</button>
       <button onClick={() => navigate(`/posts/${posts.id - 1}`)}>
         Torna al post precedente! ♥
       </button>
