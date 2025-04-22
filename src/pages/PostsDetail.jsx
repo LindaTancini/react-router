@@ -12,17 +12,17 @@ function PostsDetail() {
   // CREO STATO PER RIEMPIRE I POST
   const [posts, setPosts] = useState(null);
   //CREO STATO PER CREARE UN CARICAMENTO
-  const [loading, SetLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   //CREO CHIAMATA AXIOS CON USE EFFECT
   const endpoint = `https://jsonplaceholder.typicode.com/posts/${id}`;
   useEffect(() => {
-    SetLoading(true);
+    setLoading(true);
     axios
       .get(endpoint)
       .then((res) => setPosts(res.data))
       .catch((err) => console.error("Errore:", err))
       //FINALLY E' UNA PROMISE CHE MI SERVE PER ESEGUIRE SEMPRE L'OPERAZIONE ANCHE IN CASO DI ERRORE
-      .finally(() => SetLoading(false));
+      .finally(() => setLoading(false));
   }, [id]);
   const navigate = useNavigate();
   //CREO CONDIZIONI PER IL LOADING
